@@ -933,11 +933,11 @@ namespace olc
 	class Sprite;
 
 	// Pixel Game Engine Advanced Configuration
-	constexpr uint8_t  nMouseButtons = 5;
-	constexpr uint8_t  nDefaultAlpha = 0xFF;
-	constexpr uint32_t nDefaultPixel = uint32_t(nDefaultAlpha << 24);
-	constexpr uint8_t  nTabSizeInSpaces = 4;
-	constexpr size_t OLC_MAX_VERTS = 128;
+	inline constexpr uint8_t  nMouseButtons = 5;
+    inline constexpr uint8_t  nDefaultAlpha = 0xFF;
+    inline constexpr uint32_t nDefaultPixel = uint32_t(nDefaultAlpha << 24);
+    inline constexpr uint8_t  nTabSizeInSpaces = 4;
+    inline constexpr size_t OLC_MAX_VERTS = 128;
 	enum rcode { FAIL = 0, OK = 1, NO_FILE = -1 };
 
 	// O------------------------------------------------------------------------------O
@@ -955,7 +955,10 @@ namespace olc
 		enum Mode { NORMAL, MASK, ALPHA, CUSTOM };
 
 		Pixel();
-		Pixel(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha = nDefaultAlpha);
+		constexpr Pixel(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha = nDefaultAlpha)
+        {
+            n = red | (green << 8) | (blue << 16) | (alpha << 24);
+        } // Thanks jarekpelczar
 		Pixel(uint32_t p);
 		Pixel& operator = (const Pixel& v) = default;
 		bool   operator ==(const Pixel& p) const;
@@ -980,7 +983,7 @@ namespace olc
 	// O------------------------------------------------------------------------------O
 	// | USEFUL CONSTANTS                                                             |
 	// O------------------------------------------------------------------------------O
-	static const Pixel
+	inline constexpr Pixel
 		GREY(192, 192, 192), DARK_GREY(128, 128, 128), VERY_DARK_GREY(64, 64, 64),
 		RED(255, 0, 0), DARK_RED(128, 0, 0), VERY_DARK_RED(64, 0, 0),
 		YELLOW(255, 255, 0), DARK_YELLOW(128, 128, 0), VERY_DARK_YELLOW(64, 64, 0),
@@ -1010,9 +1013,9 @@ namespace olc
 
 	namespace Mouse
 	{
-		static constexpr int32_t LEFT = 0;
-		static constexpr int32_t RIGHT = 1;
-		static constexpr int32_t MIDDLE = 2;
+		inline constexpr int32_t LEFT = 0;
+		inline constexpr int32_t RIGHT = 1;
+		inline constexpr int32_t MIDDLE = 2;
 	};
 
 	// O------------------------------------------------------------------------------O
@@ -1821,11 +1824,6 @@ namespace olc
 	{
 		r = 0; g = 0; b = 0; a = nDefaultAlpha;
 	}
-
-	Pixel::Pixel(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha)
-	{
-		n = red | (green << 8) | (blue << 16) | (alpha << 24);
-	} // Thanks jarekpelczar 
 
 	Pixel::Pixel(uint32_t p)
 	{
@@ -7975,4 +7973,3 @@ namespace olc
 // O------------------------------------------------------------------------------O
 // | END OF OLC_PGE_APPLICATION                                                   |
 // O------------------------------------------------------------------------------O
-
