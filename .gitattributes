@@ -1,0 +1,11 @@
+*         text=auto
+
+*.txt     text eol=lf
+*.md      text eol=lf
+
+*.hpp     text eol=lf
+*.cpp     text eol=lf
+*.cppm    text eol=lf
+
+*.sln     text eol=crlf
+*.vcxproj text eol=crlf
