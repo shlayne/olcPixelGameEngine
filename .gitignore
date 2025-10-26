@@ -1,6 +1,10 @@
-/.vs
 /utilities/olcUTIL_AffineView.h
 /utilities/olcUTIL_Maths.h
 
-/_bin-int
-/_bin
+.vs/
+**.vcxproj.*
+
+**.TMP
+
+_bin/
+_bin-int/
