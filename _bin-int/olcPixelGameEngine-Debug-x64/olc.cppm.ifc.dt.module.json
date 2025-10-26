@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "C:\\Workspace\\Programming\\C++\\olcPixelGameEngine\\_bin-int\\olcPixelGameEngine-Debug-x64\\olc.obj",
+            "outputs": [
+                "C:\\Workspace\\Programming\\C++\\olcPixelGameEngine\\_bin-int\\olcPixelGameEngine-Debug-x64\\olc.cppm.ifc.dt.module.json",
+                "C:\\Workspace\\Programming\\C++\\olcPixelGameEngine\\_bin-int\\olcPixelGameEngine-Debug-x64\\olc.cppm.ifc.dt.d.json",
+                "C:\\Workspace\\Programming\\C++\\olcPixelGameEngine\\_bin-int\\olcPixelGameEngine-Debug-x64\\olc.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "olc",
+                    "source-path": "c:\\workspace\\programming\\c++\\olcpixelgameengine\\olcpixelgameengine\\source\\olc.cppm",
+                    "is-interface": true
+                }
+            ],
+            "requires": []
+        }
+    ]
+}

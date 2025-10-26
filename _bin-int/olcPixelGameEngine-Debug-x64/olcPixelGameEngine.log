@@ -1,0 +1,9 @@
+﻿  Scanning sources for module dependencies...
+  std.compat.ixx
+  std.ixx
+  olc.cppm
+  Compiling...
+  olc.cppm
+  std.ixx
+  std.compat.ixx
+  olcPixelGameEngine.vcxproj -> C:\Workspace\Programming\C++\olcPixelGameEngine\_bin\olcPixelGameEngine-Debug-x64\olcPixelGameEngine.lib
